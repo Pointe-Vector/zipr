@@ -21,12 +21,6 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
-        password: ${{ secrets.PYPI_TEST_TOKEN }}
-        repository_url: https://test.pypi.org/legacy/
-    - name: Publish distribution to Test PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        user: __token__
         password: ${{ secrets.PYPI_TOKEN }}
 
   distribute-plugins:
@@ -48,12 +42,6 @@ jobs:
     - name: Build a binary wheel and a source tarball
       run: >-
         python -m build --sdist --wheel --outdir dist/ ${{ matrix.namespace-packages }}
-    - name: Publish distribution to Test PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        user: __token__
-        password: ${{ secrets.PYPI_TEST_TOKEN }}
-        repository_url: https://test.pypi.org/legacy/
     - name: Publish distribution to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
