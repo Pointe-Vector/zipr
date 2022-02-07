@@ -8,7 +8,7 @@ if sys.version_info < (3, 10):
 else:
     from importlib.metadata import entry_points
 
-from remotezip.core.zip import EOCD, CDFileHeader
+from zipr.core.zip import EOCD, CDFileHeader
 
 class RemoteZip(metaclass=ABCMeta):
     eocd: EOCD
@@ -22,5 +22,5 @@ class RemoteZip(metaclass=ABCMeta):
     def open(self, filename: CDFileHeader) -> bytes:
         return b'ee'
 
-for entry in entry_points(group='remotezip.plugins'):
+for entry in entry_points(group='zipr.plugins'):
     setattr(RemoteZip, entry.name, getattr(importlib.import_module(entry.value), entry.name))

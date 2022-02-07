@@ -1,1 +1,1 @@
-from remotezip.core.remotezip import RemoteZip
+from zipr.core.remotezip import RemoteZip

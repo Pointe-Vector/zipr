@@ -1,1 +1,1 @@
-from remotezip.azure.azure import Azure
+from zipr.azure.azure import Azure
