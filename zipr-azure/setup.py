@@ -8,7 +8,9 @@ setup(
     url='https://github.com/Pointe-Vector/zipr',
     packages=find_namespace_packages(include=['zipr.*']),
     install_requires=[
+        'azure-storage-blob',
         'zipr-core',
+        'zlib',
     ],
     entry_points={'zipr.plugins': 'Azure = zipr.azure'},
 )

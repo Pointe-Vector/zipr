@@ -7,4 +7,7 @@ setup(
     author_email='andrew@pointevector.com',
     url='https://github.com/Pointe-Vector/zipr',
     packages=find_namespace_packages(include=['zipr.*']),
+    install_requires=[
+        'importlib_metadata',
+    ],
 )

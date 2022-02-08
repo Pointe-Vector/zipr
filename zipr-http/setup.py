@@ -8,6 +8,7 @@ setup(
     url='https://github.com/Pointe-Vector/zipr',
     packages=find_namespace_packages(include=['zipr.*']),
     install_requires=[
+        'requests',
         'zipr-core',
     ],
     entry_points={'zipr.plugins': 'Http = zipr.http'},
